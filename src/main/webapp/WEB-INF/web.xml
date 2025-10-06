@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Hospital_Managment</display-name>
+  <welcome-file-list>
+    <welcome-file>Login_Page.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+     <servlet-name>Login_Page</servlet-name>
+     <servlet-class>com.Login_Data.Login_Page</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login_Page</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>Sign_up_page</servlet-name>
+     <servlet-class>com.Login_Data.Sign_up_page</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Sign_up_page</servlet-name>
+    <url-pattern>/Sign_up</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+     <servlet-name>Forget_page</servlet-name>
+     <servlet-class>com.Login_Data.Forget_page</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Forget_page</servlet-name>
+    <url-pattern>/Change_Password</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>Book_Appointment</servlet-name>
+     <servlet-class>com.Login_Data.Book_Appoinment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Book_Appointment</servlet-name>
+    <url-pattern>/Submit_Appointment</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>Join_Team</servlet-name>
+     <servlet-class>com.Login_Data.join_our_team</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Join_Team</servlet-name>
+    <url-pattern>/Submit_Application</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>Visit_us</servlet-name>
+     <servlet-class>com.Login_Data.Visit_us</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Visit_us</servlet-name>
+    <url-pattern>/Send_Message</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>Contact_us</servlet-name>
+     <servlet-class>com.Login_Data.Contact_us</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Contact_us</servlet-name>
+    <url-pattern>/Send_information</url-pattern>
+  </servlet-mapping>
+</web-app>
