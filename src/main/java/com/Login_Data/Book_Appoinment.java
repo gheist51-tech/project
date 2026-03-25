@@ -45,5 +45,22 @@ public class Book_Appoinment extends HttpServlet{
 				e.printStackTrace();
 			}
 	}
+	
+	public static ResultSet getAppointmentDetails() {
+		try {
+				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Book_Appointment","root","root");
+				PreparedStatement ps= con.prepareStatement("select * from All_seven where email=?");
+//				User_1.getInstance().setUsername(emailFromLogin);  // store the email globally
+				System.out.println(User.getInstance().getUsername());
+				ps.setString(1, User.getInstance().getUsername()); // now retrieve it
+				ResultSet rs = ps.executeQuery();
+				return rs;
+				
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
 
 }

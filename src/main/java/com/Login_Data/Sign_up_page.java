@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -40,5 +41,19 @@ public class Sign_up_page extends HttpServlet {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	public static ResultSet getProfileDetails() {
+		try {
+				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login_register_forget_CenturaHM","root","root");
+				PreparedStatement ps= con.prepareStatement("select*from All_three where email=?");
+				ps.setString(1,User.getInstance().getUsername());
+				ResultSet rs = ps.executeQuery();
+				return rs;
+				
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+		
 	}
 }

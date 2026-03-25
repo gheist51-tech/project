@@ -1,4 +1,4 @@
-package com.Login_Data;
+ package com.Login_Data;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.form.User;
 
 public class Login_Page extends HttpServlet{
 	
@@ -43,7 +42,7 @@ public class Login_Page extends HttpServlet{
 	}
 		public static ResultSet getProfileDetails() {
 			try {
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login_register_forget_CenturaHM\",\"root\",\"root");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login_register_forget_CenturaHM","root","root");
 					PreparedStatement ps= con.prepareStatement("select*from All_three where email=?");
 					ps.setString(1,User.getInstance().getUsername());
 					ResultSet rs = ps.executeQuery();
